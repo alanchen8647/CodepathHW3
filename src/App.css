@@ -1,0 +1,55 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.flashcard {
+  display:flex;
+  justify-content: center;
+  margin:auto;
+}
+
+.card{
+  padding:2em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 1em;
+  cursor:pointer;
+  position:relative;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.word,.def{
+  position:absolute;
+  width: 80%;
+  backface-visibility: hidden
+}
+
+.card.flip, .def{
+  transform:rotateY(180deg);
+}
+
+
+
+.read-the-docs {
+  color: #888;
+}
+
+button{
+
+}
