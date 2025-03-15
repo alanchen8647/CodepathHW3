@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Flashcard from './components/flashcard'
+import Question from './components/question'
 
 function App() {
   const [ithCard, setIthCard] = useState(0)
@@ -51,6 +52,8 @@ function App() {
       def: "Polymers of amino acids"
     },
   };
+
+  let num = Object.keys(vocabs).length;
   
 
   const nextCard = () => {
@@ -67,12 +70,10 @@ function App() {
       <div className='question'>
         <h3>What is the definition of {vocabs[ithCard].word}?</h3>
       </div>
+      <Question question={vocabs[ithCard]}/>
+      <button onClick={nextCard}>Next Card</button>
       <div>
-        <input type="text" className='answer'/>
-      </div>
-      <div className='buttons'>
-        <button >Check Answer</button>
-        <button onClick={nextCard}>Next Card</button>
+        <h3>{ithCard+1}/{num}</h3>
       </div>
     </>
   )
